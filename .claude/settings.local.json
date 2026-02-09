@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:permapaysage.odoo.com)"
+      "WebFetch(domain:permapaysage.odoo.com)",
+      "Bash(npm ls:*)"
     ]
   }
 }
