@@ -18,7 +18,6 @@ export default function Home() {
 
         <Prestations />
 
-        {/* Séparateur vert — signature Permapaysage */}
         <div className="h-1 bg-brand-600" />
 
         <Garanties />
@@ -27,14 +26,12 @@ export default function Home() {
 
         <Avis />
 
-        {/* Séparateur vert */}
         <div className="h-1 bg-brand-600" />
 
         <ZoneIntervention />
 
         <FAQ />
 
-        {/* Séparateur vert */}
         <div className="h-1 bg-brand-600" />
 
         <ContactForm />
