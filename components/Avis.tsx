@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const avis = [
   {
@@ -36,50 +37,53 @@ export default function Avis() {
     <section id="avis" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
         {/* Titre */}
-        <div className="mb-12 flex items-center gap-3">
-          <Star size={24} strokeWidth={2} className="text-brand-600" />
-          <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-            Ce que disent nos clients
-          </h2>
-        </div>
+        <FadeIn>
+          <div className="mb-12 flex items-center gap-3">
+            <Star size={24} strokeWidth={2} className="text-brand-600" />
+            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+              Ce que disent nos clients
+            </h2>
+          </div>
+        </FadeIn>
 
         {/* Note globale */}
-        <div className="mb-10 flex items-center gap-3">
-          <span className="text-3xl font-bold text-earth-900">5.0/5</span>
-          <Stars count={5} size={22} />
-          <span className="text-sm text-earth-600">
-            — 31 avis Google
-          </span>
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="mb-10 flex items-center gap-3">
+            <span className="text-3xl font-bold text-earth-900">5.0/5</span>
+            <Stars count={5} size={22} />
+            <span className="text-sm text-earth-600">
+              — 31 avis Google
+            </span>
+          </div>
+        </FadeIn>
 
         {/* Cartes d'avis */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" delay={0.15}>
           {avis.map((item, index) => (
-            <div
-              key={index}
-              className="relative rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
-            >
-              <Stars count={5} size={14} />
-              <p className="mt-4 italic leading-relaxed text-earth-800">
-                &ldquo;{item.text}&rdquo;
-              </p>
-              <div className="mt-4 flex items-center justify-between">
-                <p>
-                  <span className="font-semibold text-earth-900">
-                    {item.name}
-                  </span>
-                  <span className="ml-2 text-sm text-earth-400">
-                    — Avis Google
-                  </span>
+            <StaggerItem key={index}>
+              <div className="relative rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                <Stars count={5} size={14} />
+                <p className="mt-4 italic leading-relaxed text-earth-800">
+                  &ldquo;{item.text}&rdquo;
                 </p>
+                <div className="mt-4 flex items-center justify-between">
+                  <p>
+                    <span className="font-semibold text-earth-900">
+                      {item.name}
+                    </span>
+                    <span className="ml-2 text-sm text-earth-400">
+                      — Avis Google
+                    </span>
+                  </p>
+                </div>
+                {/* Google G logo */}
+                <span className="absolute bottom-4 right-4 text-base font-bold text-earth-400/40">
+                  G
+                </span>
               </div>
-              {/* Google G logo */}
-              <span className="absolute bottom-4 right-4 text-base font-bold text-earth-400/40">
-                G
-              </span>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

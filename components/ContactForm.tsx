@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { MessageSquare, Send, CheckCircle } from "lucide-react";
+import { FadeIn } from "@/components/motion";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -55,20 +56,23 @@ export default function ContactForm() {
     <section id="contact" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-2xl px-6">
         {/* Titre */}
-        <div className="mb-2 flex items-center justify-center gap-3">
-          <MessageSquare
-            size={24}
-            strokeWidth={2}
-            className="text-brand-600"
-          />
-          <h2 className="text-3xl font-bold text-earth-900">
-            Demandez votre devis gratuit
-          </h2>
-        </div>
-        <p className="mb-10 text-center text-earth-400">
-          Réponse dans la journée par téléphone, sous 48h par email
-        </p>
+        <FadeIn>
+          <div className="mb-2 flex items-center justify-center gap-3">
+            <MessageSquare
+              size={24}
+              strokeWidth={2}
+              className="text-brand-600"
+            />
+            <h2 className="text-3xl font-bold text-earth-900">
+              Demandez votre devis gratuit
+            </h2>
+          </div>
+          <p className="mb-10 text-center text-earth-400">
+            Réponse dans la journée par téléphone, sous 48h par email
+          </p>
+        </FadeIn>
 
+        <FadeIn delay={0.15}>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           {/* Prénom / Nom */}
           <div className="grid gap-5 sm:grid-cols-2">
@@ -228,6 +232,7 @@ export default function ContactForm() {
             Vos données restent confidentielles. Réponse garantie sous 24h.
           </p>
         </form>
+        </FadeIn>
       </div>
     </section>
   );

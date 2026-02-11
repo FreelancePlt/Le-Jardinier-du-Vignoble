@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { FadeIn } from "@/components/motion";
 
 const quickLinks = [
   { label: "Prestations", href: "#prestations" },
@@ -30,6 +31,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-900 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-6">
+        <FadeIn>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Col 1 — Logo */}
           <div>
@@ -123,6 +125,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        </FadeIn>
 
         {/* Séparateur */}
         <div className="mt-12 border-t border-white/10 pt-6">

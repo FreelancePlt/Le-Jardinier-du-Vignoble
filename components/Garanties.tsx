@@ -1,4 +1,5 @@
 import { ShieldCheck, RefreshCw, BadgePercent, Clock } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const garanties = [
   {
@@ -23,34 +24,35 @@ export default function Garanties() {
     <section id="garanties" className="bg-brand-800 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
         {/* Titre */}
-        <div className="mb-12 flex items-center justify-center gap-3">
-          <ShieldCheck size={24} strokeWidth={2} className="text-brand-400" />
-          <h2 className="text-2xl font-bold text-white lg:text-3xl">
-            Nos garanties pour votre sérénité
-          </h2>
-        </div>
+        <FadeIn>
+          <div className="mb-12 flex items-center justify-center gap-3">
+            <ShieldCheck size={24} strokeWidth={2} className="text-brand-400" />
+            <h2 className="text-2xl font-bold text-white lg:text-3xl">
+              Nos garanties pour votre sérénité
+            </h2>
+          </div>
+        </FadeIn>
 
         {/* Cartes */}
-        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+        <StaggerContainer className="grid gap-6 lg:grid-cols-3 lg:gap-8" delay={0.1}>
           {garanties.map((item, index) => (
-            <div
-              key={index}
-              className="rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm"
-            >
-              <item.icon
-                size={36}
-                strokeWidth={1.5}
-                className="mx-auto mb-4 text-brand-300"
-              />
-              <h3 className="mb-3 text-xl font-semibold text-white">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/75">
-                {item.text}
-              </p>
-            </div>
+            <StaggerItem key={index}>
+              <div className="rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm">
+                <item.icon
+                  size={36}
+                  strokeWidth={1.5}
+                  className="mx-auto mb-4 text-brand-300"
+                />
+                <h3 className="mb-3 text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/75">
+                  {item.text}
+                </p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

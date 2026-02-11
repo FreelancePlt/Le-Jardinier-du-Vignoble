@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { HelpCircle, ChevronDown } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const faqs = [
   {
@@ -43,17 +44,19 @@ export default function FAQ() {
     <section id="faq" className="bg-brand-50 py-20 lg:py-28">
       <div className="mx-auto max-w-3xl px-6">
         {/* Titre */}
-        <div className="mb-12 flex items-center justify-center gap-3">
-          <HelpCircle size={24} strokeWidth={2} className="text-brand-600" />
-          <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-            Questions fréquentes
-          </h2>
-        </div>
+        <FadeIn>
+          <div className="mb-12 flex items-center justify-center gap-3">
+            <HelpCircle size={24} strokeWidth={2} className="text-brand-600" />
+            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+              Questions fréquentes
+            </h2>
+          </div>
+        </FadeIn>
 
         {/* Accordéon */}
-        <div className="flex flex-col">
+        <StaggerContainer className="flex flex-col" delay={0.1}>
           {faqs.map((item, index) => (
-            <div
+            <StaggerItem
               key={index}
               className={`${index < faqs.length - 1 ? "border-b border-earth-200/50" : ""}`}
             >
@@ -85,9 +88,9 @@ export default function FAQ() {
                   </p>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

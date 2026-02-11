@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "@/components/motion";
 
 const navLinks = [
   { label: "Prestations", href: "#prestations" },
@@ -78,36 +79,44 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="border-t border-earth-200 bg-white px-6 pb-6 pt-4 lg:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="overflow-hidden border-t border-earth-200 bg-white lg:hidden"
+          >
+            <div className="flex flex-col gap-4 px-6 pb-6 pt-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-sm font-medium text-earth-800 transition-all duration-200 ease-out hover:text-brand-600"
+                >
+                  {link.label}
+                </a>
+              ))}
               <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-earth-800 transition-all duration-200 ease-out hover:text-brand-600"
+                href="tel:0752620818"
+                className="flex items-center gap-1.5 text-sm text-earth-600"
               >
-                {link.label}
+                <Phone size={16} strokeWidth={2} />
+                07 52 62 08 18
               </a>
-            ))}
-            <a
-              href="tel:0752620818"
-              className="flex items-center gap-1.5 text-sm text-earth-600"
-            >
-              <Phone size={16} strokeWidth={2} />
-              07 52 62 08 18
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-brand-700 px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
-            >
-              Obtenir un devis
-            </a>
-          </div>
-        </div>
-      )}
+              <a
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-full bg-brand-700 px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
+              >
+                Obtenir un devis
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -12,6 +12,7 @@ import {
   Grid3x3,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 interface Service {
   icon: LucideIcon;
@@ -75,56 +76,57 @@ export default function Prestations() {
     <section id="prestations" className="bg-brand-50 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
         {/* En-tête centré */}
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <Leaf size={24} strokeWidth={2} className="text-brand-600" />
-            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Nos prestations d&apos;entretien
-            </h2>
-          </div>
+        <FadeIn>
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <Leaf size={24} strokeWidth={2} className="text-brand-600" />
+              <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+                Nos prestations d&apos;entretien
+              </h2>
+            </div>
 
-          <p className="text-lg leading-relaxed text-earth-600">
-            Jardinier à Vallet, nous intervenons aussi à Clisson, Mouzillon,
-            Gorges et dans tout le Vignoble Nantais.
-          </p>
+            <p className="text-lg leading-relaxed text-earth-600">
+              Jardinier à Vallet, nous intervenons aussi à Clisson, Mouzillon,
+              Gorges et dans tout le Vignoble Nantais.
+            </p>
 
-          {/* Chips crédit d'impôt + modes de paiement */}
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-100 px-4 py-1.5 text-sm font-medium text-accent-500">
-              <BadgePercent size={16} strokeWidth={2} />
-              Éligible au crédit d&apos;impôt de 50 %
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-800/10 bg-brand-800/5 px-4 py-1.5 text-sm text-earth-800">
-              <Wallet size={16} strokeWidth={2} />
-              Virement, CB, CESU, E-CESU, avance immédiate
-            </span>
+            {/* Chips crédit d'impôt + modes de paiement */}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-100 px-4 py-1.5 text-sm font-medium text-accent-500">
+                <BadgePercent size={16} strokeWidth={2} />
+                Éligible au crédit d&apos;impôt de 50 %
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-800/10 bg-brand-800/5 px-4 py-1.5 text-sm text-earth-800">
+                <Wallet size={16} strokeWidth={2} />
+                Virement, CB, CESU, E-CESU, avance immédiate
+              </span>
+            </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Grille de cartes */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" delay={0.15}>
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div
-                key={service.title}
-                className="cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md"
-              >
-                <Icon
-                  size={24}
-                  strokeWidth={2}
-                  className="mb-3 text-brand-600"
-                />
-                <h3 className="text-lg font-semibold text-earth-900">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-earth-600">
-                  {service.description}
-                </p>
-              </div>
+              <StaggerItem key={service.title}>
+                <div className="cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md">
+                  <Icon
+                    size={24}
+                    strokeWidth={2}
+                    className="mb-3 text-brand-600"
+                  />
+                  <h3 className="text-lg font-semibold text-earth-900">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-earth-600">
+                    {service.description}
+                  </p>
+                </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
