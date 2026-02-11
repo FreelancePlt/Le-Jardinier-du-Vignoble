@@ -60,8 +60,8 @@ export default function Avis() {
         {/* Cartes d'avis */}
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" delay={0.15}>
           {avis.map((item, index) => (
-            <StaggerItem key={index}>
-              <div className="relative rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+            <StaggerItem key={index} className="h-full">
+              <div className="relative h-full rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
                 <Stars count={5} size={14} />
                 <p className="mt-4 italic leading-relaxed text-earth-800">
                   &ldquo;{item.text}&rdquo;

@@ -109,8 +109,8 @@ export default function Prestations() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <StaggerItem key={service.title}>
-                <div className="cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md">
+              <StaggerItem key={service.title} className="h-full">
+                <div className="h-full cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md">
                   <Icon
                     size={24}
                     strokeWidth={2}

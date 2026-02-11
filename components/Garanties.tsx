@@ -36,8 +36,8 @@ export default function Garanties() {
         {/* Cartes */}
         <StaggerContainer className="grid gap-6 lg:grid-cols-3 lg:gap-8" delay={0.1}>
           {garanties.map((item, index) => (
-            <StaggerItem key={index}>
-              <div className="rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm">
+            <StaggerItem key={index} className="h-full">
+              <div className="h-full rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm">
                 <item.icon
                   size={36}
                   strokeWidth={1.5}
