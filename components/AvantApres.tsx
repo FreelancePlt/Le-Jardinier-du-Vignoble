@@ -33,7 +33,7 @@ export default function AvantApres() {
               className="text-brand-600"
             />
             <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Nos résultats en images
+              Le résultat parle de lui-même
             </h2>
           </div>
         </FadeIn>

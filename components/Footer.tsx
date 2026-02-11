@@ -134,6 +134,10 @@ export default function Footer() {
             <p>Devis gratuit, rapide et sans engagement</p>
           </div>
 
+          <p className="mt-4 text-center text-xs text-white/50">
+            © 2025 Le Jardinier du Vignoble — propulsé par Permapaysage
+          </p>
+
           {/* SEO — villes d'intervention */}
           <p className="mt-4 text-center text-xs text-white/30">
             Entretien de jardin :{" "}

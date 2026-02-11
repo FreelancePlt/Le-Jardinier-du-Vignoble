@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Prestations from "@/components/Prestations";
+import CreditImpot from "@/components/CreditImpot";
 import Garanties from "@/components/Garanties";
 import AvantApres from "@/components/AvantApres";
 import Avis from "@/components/Avis";
@@ -20,6 +21,8 @@ export default function Home() {
 
         <div className="h-1 bg-brand-600" />
 
+        <CreditImpot />
+
         <Garanties />
 
         <AvantApres />
@@ -31,8 +34,6 @@ export default function Home() {
         <ZoneIntervention />
 
         <FAQ />
-
-        <div className="h-1 bg-brand-600" />
 
         <ContactForm />
       </main>

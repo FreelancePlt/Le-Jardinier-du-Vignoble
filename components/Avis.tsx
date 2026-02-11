@@ -41,7 +41,7 @@ export default function Avis() {
           <div className="mb-12 flex items-center gap-3">
             <Star size={24} strokeWidth={2} className="text-brand-600" />
             <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Ce que disent nos clients
+              Ils nous font confiance
             </h2>
           </div>
         </FadeIn>

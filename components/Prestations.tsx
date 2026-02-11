@@ -25,49 +25,49 @@ const services: Service[] = [
     icon: Scissors,
     title: "Tonte de pelouse & mulching",
     description:
-      "Tonte régulière avec mulching pour un gazon dense et naturellement nourri.",
+      "Un gazon toujours net, dense et naturellement nourri grâce au mulching. Vous n\u2019avez qu\u2019à en profiter.",
   },
   {
     icon: TreePine,
     title: "Débroussaillage",
     description:
-      "Nettoyage des terrains, talus et zones envahies par la végétation.",
+      "On redonne forme à vos espaces envahis. Terrains, talus, sous-bois — tout redevient propre et accessible.",
   },
   {
     icon: Trees,
     title: "Taille de haies, arbustes & fruitiers",
     description:
-      "Taille raisonnée au bon moment pour respecter la floraison et limiter l\u2019envahissement.",
+      "Des haies nettes, des arbustes en pleine santé. On taille au bon moment pour respecter chaque végétal.",
   },
   {
     icon: Sprout,
     title: "Désherbage manuel et écoresponsable",
     description:
-      "Élimination des mauvaises herbes sans produit toxique, pour un jardin sain.",
+      "Zéro produit chimique, que du travail manuel. Votre jardin reste sain pour vos enfants, vos animaux et la biodiversité.",
   },
   {
     icon: Flower2,
     title: "Entretien des massifs vivaces et fleuris",
     description:
-      "Entretien soigné de vos massifs pour des floraisons généreuses toute l\u2019année.",
+      "Des massifs colorés et soignés à chaque saison. On s\u2019en occupe pour que vous n\u2019ayez qu\u2019à admirer.",
   },
   {
     icon: Wind,
     title: "Soufflage & ramassage des feuilles",
     description:
-      "Ramassage et évacuation des feuilles mortes en automne et hiver.",
+      "L\u2019automne est beau, les feuilles mortes moins. On s\u2019en charge pour garder vos allées et pelouses impeccables.",
   },
   {
     icon: Droplets,
     title: "Nettoyage des allées, terrasses et surfaces extérieures",
     description:
-      "Nettoyage haute pression ou manuel de vos allées, terrasses et murets.",
+      "Allées, terrasses, murets — on leur redonne leur éclat. Haute pression ou nettoyage manuel selon le support.",
   },
   {
     icon: Grid3x3,
     title: "Scarification",
     description:
-      "Aération du gazon pour favoriser l\u2019enracinement et la repousse.",
+      "Le secret d\u2019un gazon qui reverdit vite au printemps. La scarification aère le sol et relance la pousse.",
   },
 ];
 
@@ -81,13 +81,14 @@ export default function Prestations() {
             <div className="mb-4 flex items-center justify-center gap-3">
               <Leaf size={24} strokeWidth={2} className="text-brand-600" />
               <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-                Nos prestations d&apos;entretien
+                Tout ce dont votre jardin a besoin
               </h2>
             </div>
 
             <p className="text-lg leading-relaxed text-earth-600">
-              Jardinier à Vallet, nous intervenons aussi à Clisson, Mouzillon,
-              Gorges et dans tout le Vignoble Nantais.
+              Des prestations complètes, adaptées à chaque saison et chaque
+              terrain. Nous intervenons à Vallet, Clisson, Mouzillon, Gorges et
+              dans tout le Vignoble Nantais.
             </p>
 
             {/* Chips crédit d'impôt + modes de paiement */}
@@ -110,7 +111,7 @@ export default function Prestations() {
             const Icon = service.icon;
             return (
               <StaggerItem key={service.title} className="h-full">
-                <div className="h-full cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md">
+                <div className="h-full cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md hover:-translate-y-1">
                   <Icon
                     size={24}
                     strokeWidth={2}

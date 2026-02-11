@@ -44,7 +44,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-earth-800 transition-all duration-200 ease-out hover:text-brand-600"
+              className="relative text-sm font-medium text-earth-800 transition-all duration-200 ease-out hover:text-brand-600 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-600 after:transition-all after:duration-200 hover:after:w-full"
             >
               {link.label}
             </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            className="rounded-full bg-brand-700 px-5 py-2 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
+            className="rounded-full bg-brand-700 px-5 py-2 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm"
           >
             Obtenir un devis
           </a>
@@ -109,7 +109,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full bg-brand-700 px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
+                className="rounded-full bg-brand-700 px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600 active:scale-[0.98]"
               >
                 Obtenir un devis
               </a>

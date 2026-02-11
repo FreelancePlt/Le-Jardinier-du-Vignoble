@@ -5,17 +5,17 @@ const garanties = [
   {
     icon: RefreshCw,
     title: "Satisfait ou refait",
-    text: "Si le résultat ne correspond pas à vos attentes, nous réintervenons sans frais.",
+    text: "Pas satisfait du résultat ? On revient et on corrige, sans frais. C\u2019est aussi simple que ça.",
   },
   {
     icon: BadgePercent,
     title: "Crédit d\u2019impôt clair & immédiat",
-    text: "Agrément service à la personne : 50% de crédit d\u2019impôt. Nous vous guidons pour l\u2019avance immédiate.",
+    text: "Grâce à notre agrément, vous récupérez 50 % du montant en crédit d\u2019impôt. Et avec l\u2019avance immédiate, vous ne payez que la moitié dès la facturation.",
   },
   {
     icon: Clock,
     title: "Toujours à l\u2019heure",
-    text: "Nous respectons chaque rendez-vous. Un imprévu ? Vous êtes prévenu 24h à l\u2019avance.",
+    text: "On respecte chaque rendez-vous. Un imprévu ? Vous êtes prévenu 24h à l\u2019avance.",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Garanties() {
         <StaggerContainer className="grid gap-6 lg:grid-cols-3 lg:gap-8" delay={0.1}>
           {garanties.map((item, index) => (
             <StaggerItem key={index} className="h-full">
-              <div className="h-full rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm">
+              <div className="h-full rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm transition-all duration-200 hover:bg-white/12 hover:-translate-y-1">
                 <item.icon
                   size={36}
                   strokeWidth={1.5}

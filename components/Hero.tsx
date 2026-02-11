@@ -24,13 +24,14 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
+          {/* VARIANTE A — Hero (active) */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
           >
-            Entretien de jardin à Vallet
+            Un jardin impeccable, sans vous en soucier
           </motion.h1>
 
           <motion.p
@@ -39,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="mt-4 text-xl font-normal text-white/80 md:text-2xl"
           >
-            Un extérieur impeccable, sans stress
+            Votre jardinier de confiance à Vallet et dans tout le Vignoble Nantais
           </motion.p>
 
           <motion.p
@@ -48,9 +49,38 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="mt-4 text-base leading-relaxed text-white/60"
           >
-            Votre jardinier de proximité pour un jardin toujours propre,
-            accueillant et facile à vivre.
+            Profitez de votre extérieur sans les contraintes. Tonte, taille,
+            désherbage — on s&apos;occupe de tout, toute l&apos;année.
           </motion.p>
+
+          {/* VARIANTE B — Alternative hero
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-5xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
+          >
+            Profitez de votre jardin, on s'occupe du reste
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="mt-4 text-xl font-normal text-white/80 md:text-2xl"
+          >
+            Entretien de jardin à Vallet et alentours — par des professionnels passionnés
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="mt-4 text-base leading-relaxed text-white/60"
+          >
+            Un extérieur toujours propre, accueillant et facile à vivre. Sans effort de votre part.
+          </motion.p>
+          */}
 
           {/* Badge de réassurance — glass effect */}
           <motion.div
@@ -74,7 +104,7 @@ export default function Hero() {
           >
             <a
               href="#contact"
-              className="inline-block rounded-full bg-white px-8 py-3 text-base font-semibold text-brand-800 shadow-lg transition-all duration-200 ease-out hover:bg-cream hover:shadow-xl"
+              className="inline-block rounded-full bg-white px-8 py-3 text-base font-semibold text-brand-800 shadow-lg transition-all duration-200 ease-out hover:bg-cream hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-md"
             >
               Obtenir un devis gratuit
             </a>

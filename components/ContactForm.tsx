@@ -64,11 +64,11 @@ export default function ContactForm() {
               className="text-brand-600"
             />
             <h2 className="text-3xl font-bold text-earth-900">
-              Demandez votre devis gratuit
+              Votre devis gratuit en moins de 24h
             </h2>
           </div>
           <p className="mb-10 text-center text-earth-400">
-            Réponse dans la journée par téléphone, sous 48h par email
+            Décrivez-nous votre besoin, on vous rappelle rapidement.
           </p>
         </FadeIn>
 
@@ -87,6 +87,7 @@ export default function ContactForm() {
                 type="text"
                 id="prenom"
                 name="prenom"
+                autoComplete="given-name"
                 required
                 value={form.prenom}
                 onChange={handleChange}
@@ -105,6 +106,7 @@ export default function ContactForm() {
                 type="text"
                 id="nom"
                 name="nom"
+                autoComplete="family-name"
                 required
                 value={form.nom}
                 onChange={handleChange}
@@ -126,6 +128,7 @@ export default function ContactForm() {
               type="email"
               id="email"
               name="email"
+              autoComplete="email"
               required
               value={form.email}
               onChange={handleChange}
@@ -146,6 +149,7 @@ export default function ContactForm() {
               type="tel"
               id="telephone"
               name="telephone"
+              autoComplete="tel"
               required
               value={form.telephone}
               onChange={handleChange}
@@ -166,6 +170,7 @@ export default function ContactForm() {
               type="text"
               id="ville"
               name="ville"
+              autoComplete="address-level2"
               required
               value={form.ville}
               onChange={handleChange}
@@ -222,7 +227,7 @@ export default function ContactForm() {
           {/* Bouton submit */}
           <button
             type="submit"
-            className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-brand-700 py-4 text-lg font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-brand-700 py-4 text-lg font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm"
           >
             <Send size={18} strokeWidth={2} />
             Envoyer ma demande
