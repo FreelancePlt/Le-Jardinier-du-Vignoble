@@ -5,19 +5,19 @@ import { HelpCircle, ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Combien coûte l'entretien de mon jardin ?",
+    question: "Combien coûte l\u2019entretien de mon jardin ?",
     answer:
-      "Les tarifs dépendent de la surface de votre terrain, des tâches souhaitées et de la fréquence d'intervention. Nous établissons un devis gratuit et personnalisé après une visite ou un échange téléphonique.",
+      "Les tarifs dépendent de la surface de votre terrain, des tâches souhaitées et de la fréquence d\u2019intervention. Nous établissons un devis gratuit et personnalisé après une visite ou un échange téléphonique.",
   },
   {
-    question: "Est-ce que je peux bénéficier du crédit d'impôt ?",
+    question: "Est-ce que je peux bénéficier du crédit d\u2019impôt ?",
     answer:
-      "Oui, grâce à notre agrément service à la personne, vous bénéficiez de 50 % de crédit d'impôt sur les prestations d'entretien de jardin. Nous vous guidons pour mettre en place l'avance immédiate si vous le souhaitez.",
+      "Oui, grâce à notre agrément service à la personne, vous bénéficiez de 50 % de crédit d\u2019impôt sur les prestations d\u2019entretien de jardin. Nous vous guidons pour mettre en place l\u2019avance immédiate si vous le souhaitez.",
   },
   {
     question: "Intervenez-vous pour des prestations ponctuelles ?",
     answer:
-      "Absolument. Nous proposons aussi bien des contrats d'entretien régulier que des interventions ponctuelles à la demande : tonte, taille de haies, nettoyage de terrasse, etc.",
+      "Absolument. Nous proposons aussi bien des contrats d\u2019entretien régulier que des interventions ponctuelles à la demande : tonte, taille de haies, nettoyage de terrasse, etc.",
   },
   {
     question:
@@ -43,7 +43,7 @@ export default function FAQ() {
     <section id="faq" className="bg-brand-50 py-20 lg:py-28">
       <div className="mx-auto max-w-3xl px-6">
         {/* Titre */}
-        <div className="mb-12 flex items-center gap-3">
+        <div className="mb-12 flex items-center justify-center gap-3">
           <HelpCircle size={24} strokeWidth={2} className="text-brand-600" />
           <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
             Questions fréquentes
@@ -51,14 +51,17 @@ export default function FAQ() {
         </div>
 
         {/* Accordéon */}
-        <div className="flex flex-col divide-y divide-earth-200">
+        <div className="flex flex-col">
           {faqs.map((item, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className={`${index < faqs.length - 1 ? "border-b border-earth-200/50" : ""}`}
+            >
               <button
                 onClick={() => toggle(index)}
                 className="flex w-full items-center justify-between py-5 text-left transition-all duration-200 ease-out"
               >
-                <span className="font-semibold text-earth-900 pr-4">
+                <span className="pr-4 text-lg font-medium text-earth-900">
                   {item.question}
                 </span>
                 <ChevronDown
@@ -77,7 +80,7 @@ export default function FAQ() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="pb-5 leading-relaxed text-earth-600">
+                  <p className="mt-1 pb-5 text-base leading-relaxed text-earth-600">
                     {item.answer}
                   </p>
                 </div>

@@ -27,9 +27,14 @@ export default function Navbar() {
             height={40}
             className="rounded-full"
           />
-          <span className="text-lg font-bold text-brand-700">
-            Le Jardinier du Vignoble
-          </span>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold leading-tight text-brand-700">
+              Le Jardinier du Vignoble
+            </span>
+            <span className="text-xs text-earth-400">
+              propulsé par Permapaysage
+            </span>
+          </div>
         </a>
 
         {/* Desktop nav links */}

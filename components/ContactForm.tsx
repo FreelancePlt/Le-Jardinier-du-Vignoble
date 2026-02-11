@@ -31,7 +31,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <section id="contact" className="bg-white py-20 lg:py-28">
-        <div className="mx-auto max-w-xl px-6 text-center">
+        <div className="mx-auto max-w-2xl px-6 text-center">
           <CheckCircle
             size={48}
             strokeWidth={1.5}
@@ -48,21 +48,24 @@ export default function ContactForm() {
     );
   }
 
+  const inputClasses =
+    "w-full rounded-lg border border-earth-200/50 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent transition-all duration-200";
+
   return (
     <section id="contact" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-xl px-6">
+      <div className="mx-auto max-w-2xl px-6">
         {/* Titre */}
-        <div className="mb-2 flex items-center gap-3">
+        <div className="mb-2 flex items-center justify-center gap-3">
           <MessageSquare
             size={24}
             strokeWidth={2}
             className="text-brand-600"
           />
-          <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+          <h2 className="text-3xl font-bold text-earth-900">
             Demandez votre devis gratuit
           </h2>
         </div>
-        <p className="mb-10 text-earth-400">
+        <p className="mb-10 text-center text-earth-400">
           Réponse dans la journée par téléphone, sous 48h par email
         </p>
 
@@ -83,7 +86,7 @@ export default function ContactForm() {
                 required
                 value={form.prenom}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+                className={inputClasses}
                 placeholder="Votre prénom"
               />
             </div>
@@ -101,7 +104,7 @@ export default function ContactForm() {
                 required
                 value={form.nom}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+                className={inputClasses}
                 placeholder="Votre nom"
               />
             </div>
@@ -122,7 +125,7 @@ export default function ContactForm() {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              className={inputClasses}
               placeholder="votre@email.fr"
             />
           </div>
@@ -142,7 +145,7 @@ export default function ContactForm() {
               required
               value={form.telephone}
               onChange={handleChange}
-              className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              className={inputClasses}
               placeholder="06 00 00 00 00"
             />
           </div>
@@ -162,7 +165,7 @@ export default function ContactForm() {
               required
               value={form.ville}
               onChange={handleChange}
-              className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              className={inputClasses}
               placeholder="Vallet 44330"
             />
           </div>
@@ -181,7 +184,7 @@ export default function ContactForm() {
               required
               value={form.besoin}
               onChange={handleChange}
-              className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              className={inputClasses}
             >
               <option value="">Sélectionnez votre besoin</option>
               <option value="tonte">Tonte</option>
@@ -207,7 +210,7 @@ export default function ContactForm() {
               rows={3}
               value={form.message}
               onChange={handleChange}
-              className="w-full rounded-lg border border-earth-200 bg-white px-4 py-2.5 text-earth-800 placeholder:text-earth-400 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              className={inputClasses}
               placeholder="Décrivez votre besoin..."
             />
           </div>
@@ -215,11 +218,15 @@ export default function ContactForm() {
           {/* Bouton submit */}
           <button
             type="submit"
-            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-brand-700 px-8 py-3 text-base font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-brand-700 py-4 text-lg font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-600"
           >
             <Send size={18} strokeWidth={2} />
             Envoyer ma demande
           </button>
+
+          <p className="mt-1 text-center text-xs text-earth-400">
+            Vos données restent confidentielles. Réponse garantie sous 24h.
+          </p>
         </form>
       </div>
     </section>

@@ -10,7 +10,7 @@ const montages = [
   {
     src: "/montage-avant-apres/Desherbage d_allée.png",
     alt: "Avant/après désherbage d'allée",
-    caption: "Désherbage d'allée — Vignoble Nantais",
+    caption: "Désherbage d\u2019allée — Vignoble Nantais",
   },
   {
     src: "/montage-avant-apres/Nettoyage de Pavés.png",
@@ -39,7 +39,7 @@ export default function AvantApres() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {montages.map((montage, index) => (
             <div key={index} className="overflow-hidden rounded-xl shadow-sm">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-4/3">
                 <Image
                   src={montage.src}
                   alt={montage.alt}
@@ -47,6 +47,15 @@ export default function AvantApres() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                {/* Labels Avant / Après */}
+                <span className="absolute left-2 top-2 rounded bg-earth-900/60 px-2 py-1 text-xs font-medium text-white">
+                  Avant
+                </span>
+                <span className="absolute right-2 top-2 rounded bg-earth-900/60 px-2 py-1 text-xs font-medium text-white">
+                  Après
+                </span>
+                {/* Ligne centrale de séparation */}
+                <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-white/30" />
               </div>
               <p className="bg-white px-4 py-3 text-sm text-earth-600">
                 {montage.caption}

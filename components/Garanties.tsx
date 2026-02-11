@@ -8,13 +8,13 @@ const garanties = [
   },
   {
     icon: BadgePercent,
-    title: "Crédit d'impôt clair & immédiat",
-    text: "Agrément service à la personne : 50% de crédit d'impôt. Nous vous guidons pour l'avance immédiate.",
+    title: "Crédit d\u2019impôt clair & immédiat",
+    text: "Agrément service à la personne : 50% de crédit d\u2019impôt. Nous vous guidons pour l\u2019avance immédiate.",
   },
   {
     icon: Clock,
-    title: "Toujours à l'heure",
-    text: "Nous respectons chaque rendez-vous. Un imprévu ? Vous êtes prévenu 24h à l'avance.",
+    title: "Toujours à l\u2019heure",
+    text: "Nous respectons chaque rendez-vous. Un imprévu ? Vous êtes prévenu 24h à l\u2019avance.",
   },
 ];
 
@@ -31,21 +31,21 @@ export default function Garanties() {
         </div>
 
         {/* Cartes */}
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {garanties.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white/5 p-8 text-center"
+              className="rounded-xl border border-white/10 bg-white/[0.07] p-8 text-center backdrop-blur-sm"
             >
               <item.icon
-                size={32}
+                size={36}
                 strokeWidth={1.5}
-                className="mx-auto mb-4 text-brand-400"
+                className="mx-auto mb-4 text-brand-300"
               />
-              <h3 className="mb-3 text-lg font-semibold text-white">
+              <h3 className="mb-3 text-xl font-semibold text-white">
                 {item.title}
               </h3>
-              <p className="text-[15px] leading-relaxed text-white/80">
+              <p className="text-sm leading-relaxed text-white/75">
                 {item.text}
               </p>
             </div>

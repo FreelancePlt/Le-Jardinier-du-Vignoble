@@ -29,11 +29,18 @@ export default function ZoneIntervention() {
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">
-          {/* Carte placeholder */}
-          <div className="flex aspect-[4/3] items-center justify-center rounded-xl bg-earth-100 lg:aspect-auto lg:min-h-[360px]">
-            <p className="text-sm text-earth-400">
-              [Google Maps — Vallet 44330]
-            </p>
+          {/* Google Maps */}
+          <div className="overflow-hidden rounded-xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86956.5!2d-1.27!3d47.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ec9d39a4e1b1%3A0x406d39bae4b4e20!2s44330%20Vallet!5e0!3m2!1sfr!2sfr!4v1"
+              width="100%"
+              height="380"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="aspect-4/3 w-full lg:aspect-auto lg:min-h-95"
+              title="Carte Google Maps — Vallet 44330"
+            />
           </div>
 
           {/* Texte + communes */}
