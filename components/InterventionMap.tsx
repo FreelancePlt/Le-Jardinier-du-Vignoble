@@ -6,6 +6,7 @@ import {
   Circle,
   CircleMarker,
   Tooltip,
+  ZoomControl,
   useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -19,9 +20,6 @@ function MapConfig() {
 
   useEffect(() => {
 			map.dragging.disable();
-			map.touchZoom.disable();
-			map.doubleClickZoom.disable();
-			map.boxZoom.disable();
 			map.keyboard.disable();
 			const enableDrag = () => map.dragging.enable();
 			const disableDrag = () => map.dragging.disable();
@@ -46,11 +44,14 @@ export default function InterventionMap() {
       zoom={10}
       scrollWheelZoom={false}
       zoomControl={false}
+      minZoom={9}
+      maxZoom={13}
       attributionControl={false}
       className="intervention-map h-full w-full"
       style={{ background: "#F7F3ED" }}
     >
       <MapConfig />
+      <ZoomControl position="bottomright" />
 
       <TileLayer
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
