@@ -9,7 +9,10 @@
       "Bash(sips:*)",
       "Bash(for f in \"/Users/raph/Documents/Travail/Personnel/Repositories/Le-Jardinier-du-Vignoble/public/photos-entretien/apres/\"*.jpg \"/Users/raph/Documents/Travail/Personnel/Repositories/Le-Jardinier-du-Vignoble/public/photos-entretien/avant/\"*.jpg)",
       "Bash(do sips -g pixelWidth -g pixelHeight \"$f\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(for f in \"public/photos-entretien/apres/\"*.jpg)",
+      "Bash(do echo \"Processing: $f\")",
+      "Bash(for f in \"public/photos-entretien/avant/\"*.jpg)"
     ]
   }
 }
