@@ -29,64 +29,58 @@ const communes = [
 
 export default function ZoneIntervention() {
   return (
-    <section id="zone" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Titre */}
-        <FadeIn>
-          <div className="mb-12 flex items-center gap-3">
-            <MapPin size={24} strokeWidth={2} className="text-brand-600" />
-            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Notre zone d&apos;intervention
-            </h2>
-          </div>
-        </FadeIn>
+			<section id="zone" className="bg-white py-20 lg:py-28">
+				<div className="mx-auto max-w-6xl px-6">
+					<FadeIn>
+						<div className="mb-12 flex items-center gap-3">
+							<MapPin size={24} strokeWidth={2} className="text-brand-600" />
+							<h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+								Notre zone d&apos;intervention
+							</h2>
+						</div>
+					</FadeIn>
 
-        <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
-          {/* Carte interactive */}
-          <FadeIn direction="left">
-            <div className="h-80 overflow-hidden rounded-xl shadow-sm lg:h-112">
-              <InterventionMap />
-            </div>
-          </FadeIn>
+					<div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
+						<FadeIn direction="left">
+							<div className="relative z-0 h-80 overflow-hidden rounded-xl shadow-sm lg:h-112">
+								<InterventionMap />
+							</div>
+						</FadeIn>
 
-          {/* Texte + communes */}
-          <FadeIn direction="right" delay={0.15}>
-            <div className="flex flex-col gap-6">
-              <p className="text-lg leading-relaxed text-earth-800">
-                Nous intervenons dans un rayon de{" "}
-                <strong className="text-earth-900">
-                  25 km autour de Vallet
-                </strong>{" "}
-                pour l&apos;entretien de jardin dans le Vignoble Nantais.
-              </p>
+						<FadeIn direction="right" delay={0.15}>
+							<div className="flex flex-col gap-6">
+								<p className="text-lg leading-relaxed text-earth-800">
+									Nous intervenons dans un rayon de{" "}
+									<strong className="text-earth-900">25 km autour de Vallet</strong> pour
+									l&apos;entretien de jardin dans le Vignoble Nantais.
+								</p>
 
-              {/* Chips communes */}
-              <div className="flex flex-wrap gap-2">
-                {communes.map((commune) => (
-                  <span
-                    key={commune}
-                    className="rounded-full bg-cream px-3 py-1 text-sm text-earth-800"
-                  >
-                    {commune}
-                  </span>
-                ))}
-              </div>
+								<div className="flex flex-wrap gap-2">
+									{communes.map((commune) => (
+										<span
+											key={commune}
+											className="rounded-full bg-cream px-3 py-1 text-sm text-earth-800"
+										>
+											{commune}
+										</span>
+									))}
+								</div>
 
-              <p className="text-sm text-earth-400">
-                Vous êtes plus loin ? Contactez-nous pour vérifier si nous
-                pouvons intervenir.
-              </p>
+								<p className="text-sm text-earth-400">
+									Vous êtes plus loin ? Contactez-nous pour vérifier si nous pouvons
+									intervenir.
+								</p>
 
-              <a
-                href="#contact"
-                className="mt-2 inline-block self-start rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-500 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm"
-              >
-                Demander un devis
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    </section>
-  );
+								<a
+									href="#contact"
+									className="mt-2 inline-block self-start rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:bg-brand-500 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm"
+								>
+									Demander un devis
+								</a>
+							</div>
+						</FadeIn>
+					</div>
+				</div>
+			</section>
+		);
 }

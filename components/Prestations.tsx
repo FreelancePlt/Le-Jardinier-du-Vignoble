@@ -74,82 +74,78 @@ const services: Service[] = [
 
 export default function Prestations() {
   return (
-    <section id="prestations" className="bg-brand-50 py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* En-tête centré */}
-        <FadeIn>
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <Leaf size={24} strokeWidth={2} className="text-brand-600" />
-              <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-                Tout ce dont votre jardin a besoin
-              </h2>
-            </div>
+			<section id="prestations" className="bg-brand-50 py-20 lg:py-28">
+				<div className="mx-auto max-w-6xl px-6">
+					<FadeIn>
+						<div className="mx-auto max-w-2xl text-center">
+							<div className="mb-4 flex items-center justify-center gap-3">
+								<Leaf size={24} strokeWidth={2} className="text-brand-600" />
+								<h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+									Tout ce dont votre jardin a besoin
+								</h2>
+							</div>
 
-            <p className="text-lg leading-relaxed text-earth-600">
-              Des prestations complètes, adaptées à chaque saison et chaque
-              terrain. Nous intervenons à Vallet, Clisson, Mouzillon, Gorges et
-              dans tout le Vignoble Nantais.
-            </p>
+							<p className="text-lg leading-relaxed text-earth-600">
+								Des prestations complètes, adaptées à chaque saison et chaque terrain.
+								Nous intervenons à Vallet, Clisson, Mouzillon, Gorges et dans tout le
+								Vignoble Nantais.
+							</p>
 
-            {/* Chips crédit d'impôt + modes de paiement */}
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-100 px-4 py-1.5 text-sm font-medium text-brand-600">
-                <BadgePercent size={16} strokeWidth={2} />
-                Éligible au crédit d&apos;impôt de 50 %
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-800/10 bg-brand-800/5 px-4 py-1.5 text-sm text-earth-800">
-                <Wallet size={16} strokeWidth={2} />
-                Virement, CB, CESU, E-CESU, avance immédiate
-              </span>
-            </div>
-          </div>
-        </FadeIn>
+							<div className="mt-6 flex flex-wrap justify-center gap-3">
+								<span className="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-100 px-4 py-1.5 text-sm font-medium text-brand-600">
+									<BadgePercent size={16} strokeWidth={2} />
+									Éligible au crédit d&apos;impôt de 50 %
+								</span>
+								<span className="inline-flex items-center gap-2 rounded-full border border-brand-800/10 bg-brand-800/5 px-4 py-1.5 text-sm text-earth-800">
+									<Wallet size={16} strokeWidth={2} />
+									Virement, CB, CESU, E-CESU, avance immédiate
+								</span>
+							</div>
+						</div>
+					</FadeIn>
 
-        {/* Grille de cartes */}
-        <StaggerContainer className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" delay={0.15}>
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <StaggerItem key={service.title} className="h-full">
-                <div className="h-full cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md hover:-translate-y-1">
-                  <Icon
-                    size={24}
-                    strokeWidth={2}
-                    className="mb-3 text-brand-600"
-                  />
-                  <h3 className="text-lg font-semibold text-earth-900">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-earth-600">
-                    {service.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            );
-          })}
+					<StaggerContainer
+						className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+						delay={0.15}
+					>
+						{services.map((service) => {
+							const Icon = service.icon;
+							return (
+								<StaggerItem key={service.title} className="h-full">
+									<div className="h-full cursor-default rounded-xl border border-cream bg-white p-6 transition-all duration-200 hover:border-brand-600/30 hover:shadow-md hover:-translate-y-1">
+										<Icon size={24} strokeWidth={2} className="mb-3 text-brand-600" />
+										<h3 className="text-lg font-semibold text-earth-900">
+											{service.title}
+										</h3>
+										<p className="mt-2 text-sm leading-relaxed text-earth-600">
+											{service.description}
+										</p>
+									</div>
+								</StaggerItem>
+							);
+						})}
 
-          {/* CTA card */}
-          <StaggerItem className="h-full">
-            <a
-              href="#contact"
-              className="flex h-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-brand-600/50 bg-brand-50 p-6 text-center transition-all duration-200 hover:border-brand-600 hover:bg-brand-100 hover:-translate-y-1"
-            >
-              <MessageSquare
-                size={24}
-                strokeWidth={2}
-                className="mb-3 text-brand-600"
-              />
-              <h3 className="text-lg font-semibold text-earth-900">
-                Un autre besoin ?
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-earth-600">
-                Décrivez-nous votre projet, on trouve la solution adaptée à votre jardin.
-              </p>
-            </a>
-          </StaggerItem>
-        </StaggerContainer>
-      </div>
-    </section>
-  );
+						<StaggerItem className="h-full">
+							<a
+								href="#contact"
+								className="flex h-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-brand-600/50 bg-brand-50 p-6 text-center transition-all duration-200 hover:border-brand-600 hover:bg-brand-100 hover:-translate-y-1"
+							>
+								<MessageSquare
+									size={24}
+									strokeWidth={2}
+									className="mb-3 text-brand-600"
+								/>
+								<h3 className="text-lg font-semibold text-earth-900">
+									Un autre besoin ?
+								</h3>
+								<p className="mt-2 text-sm leading-relaxed text-earth-600">
+									Décrivez-nous votre projet, on trouve la solution adaptée à votre
+									jardin.
+								</p>
+							</a>
+						</StaggerItem>
+					</StaggerContainer>
+				</div>
+			</section>
+		);
 }

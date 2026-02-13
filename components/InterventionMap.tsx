@@ -14,31 +14,27 @@ import { useEffect } from "react";
 const VALLET: [number, number] = [47.1611, -1.2644];
 const RADIUS_M = 25_000;
 
-/** Hide zoom control & keep the map non-interactive enough to stay clean */
 function MapConfig() {
   const map = useMap();
 
   useEffect(() => {
-    // Disable drag on mobile to avoid accidental scroll-jacking
-    map.dragging.disable();
-    map.touchZoom.disable();
-    map.doubleClickZoom.disable();
-    map.boxZoom.disable();
-    map.keyboard.disable();
+			map.dragging.disable();
+			map.touchZoom.disable();
+			map.doubleClickZoom.disable();
+			map.boxZoom.disable();
+			map.keyboard.disable();
+			const enableDrag = () => map.dragging.enable();
+			const disableDrag = () => map.dragging.disable();
 
-    // Enable on desktop hover so curious users can still explore
-    const enableDrag = () => map.dragging.enable();
-    const disableDrag = () => map.dragging.disable();
+			const el = map.getContainer();
+			el.addEventListener("mouseenter", enableDrag);
+			el.addEventListener("mouseleave", disableDrag);
 
-    const el = map.getContainer();
-    el.addEventListener("mouseenter", enableDrag);
-    el.addEventListener("mouseleave", disableDrag);
-
-    return () => {
-      el.removeEventListener("mouseenter", enableDrag);
-      el.removeEventListener("mouseleave", disableDrag);
-    };
-  }, [map]);
+			return () => {
+				el.removeEventListener("mouseenter", enableDrag);
+				el.removeEventListener("mouseleave", disableDrag);
+			};
+		}, [map]);
 
   return null;
 }
@@ -56,12 +52,10 @@ export default function InterventionMap() {
     >
       <MapConfig />
 
-      {/* Stadia Alidade Smooth — ultra-clean, muted tones */}
       <TileLayer
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
       />
 
-      {/* Outer glow — large, very faint circle for depth */}
       <Circle
         center={VALLET}
         radius={RADIUS_M + 1500}
@@ -72,7 +66,6 @@ export default function InterventionMap() {
         }}
       />
 
-      {/* 25km radius — main circle */}
       <Circle
         center={VALLET}
         radius={RADIUS_M}
@@ -86,7 +79,6 @@ export default function InterventionMap() {
         }}
       />
 
-      {/* Inner ring — subtle reinforcement */}
       <Circle
         center={VALLET}
         radius={RADIUS_M}
@@ -101,7 +93,6 @@ export default function InterventionMap() {
         }}
       />
 
-      {/* Center marker — branded dot */}
       <CircleMarker
         center={VALLET}
         radius={6}

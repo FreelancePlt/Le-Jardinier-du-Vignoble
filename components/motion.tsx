@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { type ReactNode } from "react";
 
-/* ── Fade-in on scroll (or on mount) ── */
 export function FadeIn({
   children,
   className,
@@ -36,7 +35,6 @@ export function FadeIn({
   );
 }
 
-/* ── Stagger container — pairs with StaggerItem ── */
 export function StaggerContainer({
   children,
   className,

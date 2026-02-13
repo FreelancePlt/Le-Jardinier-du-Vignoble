@@ -22,8 +22,6 @@ export default async function Home() {
 
         <Prestations />
 
-        <div className="h-1 bg-brand-600" />
-
         <CreditImpot />
 
         <Garanties />
@@ -32,7 +30,6 @@ export default async function Home() {
 
         <Avis data={reviewsData} />
 
-        <div className="h-1 bg-brand-600" />
 
         <ZoneIntervention />
 

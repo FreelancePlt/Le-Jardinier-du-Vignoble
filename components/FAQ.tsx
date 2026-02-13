@@ -41,57 +41,55 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-brand-50 py-20 lg:py-28">
-      <div className="mx-auto max-w-3xl px-6">
-        {/* Titre */}
-        <FadeIn>
-          <div className="mb-12 flex items-center justify-center gap-3">
-            <HelpCircle size={24} strokeWidth={2} className="text-brand-600" />
-            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Questions fréquentes
-            </h2>
-          </div>
-        </FadeIn>
+			<section id="faq" className="bg-brand-50 py-20 lg:py-28">
+				<div className="mx-auto max-w-3xl px-6">
+					<FadeIn>
+						<div className="mb-12 flex items-center justify-center gap-3">
+							<HelpCircle size={24} strokeWidth={2} className="text-brand-600" />
+							<h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+								Questions fréquentes
+							</h2>
+						</div>
+					</FadeIn>
 
-        {/* Accordéon */}
-        <StaggerContainer className="flex flex-col" delay={0.1}>
-          {faqs.map((item, index) => (
-            <StaggerItem
-              key={index}
-              className={`${index < faqs.length - 1 ? "border-b border-earth-200/50" : ""}`}
-            >
-              <button
-                onClick={() => toggle(index)}
-                className="flex w-full items-center justify-between py-5 text-left transition-all duration-200 ease-out"
-              >
-                <span className="pr-4 text-lg font-medium text-earth-900">
-                  {item.question}
-                </span>
-                <ChevronDown
-                  size={20}
-                  strokeWidth={2}
-                  className={`shrink-0 text-brand-600 transition-transform duration-200 ease-out ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`grid transition-all duration-200 ease-out ${
-                  openIndex === index
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <p className="mt-1 pb-5 text-base leading-relaxed text-earth-600">
-                    {item.answer}
-                  </p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
-    </section>
-  );
+					<StaggerContainer className="flex flex-col" delay={0.1}>
+						{faqs.map((item, index) => (
+							<StaggerItem
+								key={index}
+								className={`${index < faqs.length - 1 ? "border-b border-earth-200/50" : ""}`}
+							>
+								<button
+									onClick={() => toggle(index)}
+									className="flex w-full items-center justify-between py-5 text-left transition-all duration-200 ease-out"
+								>
+									<span className="pr-4 text-lg font-medium text-earth-900">
+										{item.question}
+									</span>
+									<ChevronDown
+										size={20}
+										strokeWidth={2}
+										className={`shrink-0 text-brand-600 transition-transform duration-200 ease-out ${
+											openIndex === index ? "rotate-180" : ""
+										}`}
+									/>
+								</button>
+								<div
+									className={`grid transition-all duration-200 ease-out ${
+										openIndex === index
+											? "grid-rows-[1fr] opacity-100"
+											: "grid-rows-[0fr] opacity-0"
+									}`}
+								>
+									<div className="overflow-hidden">
+										<p className="mt-1 pb-5 text-base leading-relaxed text-earth-600">
+											{item.answer}
+										</p>
+									</div>
+								</div>
+							</StaggerItem>
+						))}
+					</StaggerContainer>
+				</div>
+			</section>
+		);
 }

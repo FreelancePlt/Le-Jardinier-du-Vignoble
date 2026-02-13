@@ -221,14 +221,14 @@ export default function ContactForm() {
               {/* Phone CTA */}
               <a
                 href="tel:0752620818"
-                className="flex items-center gap-4 rounded-xl bg-brand-700 p-5 transition-all duration-200 hover:bg-brand-600"
+                className="flex items-center gap-4 rounded-xl border border-accent-400/40 bg-accent-100 p-5 transition-all duration-200 hover:border-accent-400 hover:shadow-sm"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20">
-                  <Phone size={22} strokeWidth={2} className="text-white" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-400/15">
+                  <Phone size={22} strokeWidth={2} className="text-accent-500" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white/70">Vous préférez appeler ?</p>
-                  <p className="text-lg font-bold text-white">07 52 62 08 18</p>
+                  <p className="text-xs font-medium text-earth-600">Vous préférez appeler ?</p>
+                  <p className="text-lg font-bold text-earth-900">07 52 62 08 18</p>
                 </div>
               </a>
             </div>
