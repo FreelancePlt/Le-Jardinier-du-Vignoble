@@ -9,8 +9,11 @@ import ZoneIntervention from "@/components/ZoneIntervention";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import { fetchGoogleReviews } from "@/lib/google-reviews";
 
-export default function Home() {
+export default async function Home() {
+  const reviewsData = await fetchGoogleReviews();
+
   return (
     <>
       <Navbar />
@@ -27,7 +30,7 @@ export default function Home() {
 
         <AvantApres />
 
-        <Avis />
+        <Avis data={reviewsData} />
 
         <div className="h-1 bg-brand-600" />
 

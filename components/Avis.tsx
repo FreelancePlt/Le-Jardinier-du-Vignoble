@@ -1,20 +1,9 @@
-import { Star } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+"use client";
 
-const avis = [
-  {
-    name: "Claudie Ebel",
-    text: "Premier contrat avec Jessy pour restauration du jardin dont je suis pleinement satisfaite. Jessy est très professionnel, à l\u2019écoute et de bon conseil.",
-  },
-  {
-    name: "Marie Annick Birot",
-    text: "Nous avons fait appel à Jessie et à son apprenti pour notre jardin immense. Il a su mettre en valeur nos extérieurs avec un travail soigné et régulier.",
-  },
-  {
-    name: "Alain Durand",
-    text: "Nous recommandons fortement cette entreprise, travail bien réalisé, Jessi est super sympa, très professionnel et à l\u2019écoute.",
-  },
-];
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { FadeIn } from "@/components/motion";
+import type { PlaceReviews } from "@/lib/google-reviews";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 function Stars({ count = 5, size = 16 }: { count?: number; size?: number }) {
   return (
@@ -32,58 +21,121 @@ function Stars({ count = 5, size = 16 }: { count?: number; size?: number }) {
   );
 }
 
-export default function Avis() {
+export default function Avis({ data }: { data: PlaceReviews }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setCanScrollLeft(scrollLeft > 4);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, [checkScroll]);
+
+  const scroll = (dir: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const card = scrollRef.current.firstElementChild;
+    const cardWidth = (card?.clientWidth || 350) + 24;
+    scrollRef.current.scrollBy({
+      left: dir === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="avis" className="bg-cream py-20 lg:py-28">
+      {/* Title + rating + arrows */}
       <div className="mx-auto max-w-6xl px-6">
-        {/* Titre */}
         <FadeIn>
-          <div className="mb-12 flex items-center gap-3">
-            <Star size={24} strokeWidth={2} className="text-brand-600" />
-            <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
-              Ils nous font confiance
-            </h2>
-          </div>
-        </FadeIn>
-
-        {/* Note globale */}
-        <FadeIn delay={0.1}>
-          <div className="mb-10 flex items-center gap-3">
-            <span className="text-3xl font-bold text-earth-900">5.0/5</span>
-            <Stars count={5} size={22} />
-            <span className="text-sm text-earth-600">
-              — 31 avis Google
-            </span>
-          </div>
-        </FadeIn>
-
-        {/* Cartes d'avis */}
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" delay={0.15}>
-          {avis.map((item, index) => (
-            <StaggerItem key={index} className="h-full">
-              <div className="relative h-full rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
-                <Stars count={5} size={14} />
-                <p className="mt-4 italic leading-relaxed text-earth-800">
-                  &ldquo;{item.text}&rdquo;
-                </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <p>
-                    <span className="font-semibold text-earth-900">
-                      {item.name}
-                    </span>
-                    <span className="ml-2 text-sm text-earth-400">
-                      — Avis Google
-                    </span>
-                  </p>
-                </div>
-                {/* Google G logo */}
-                <span className="absolute bottom-4 right-4 text-base font-bold text-earth-400/40">
-                  G
+          <div className="mb-10 flex items-center justify-between">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <Star size={24} strokeWidth={2} className="text-brand-600" />
+                <h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+                  Ils nous font confiance
+                </h2>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl font-bold text-earth-900">
+                  {data.rating.toFixed(1)}/5
+                </span>
+                <Stars count={5} size={22} />
+                <span className="text-sm text-earth-600">
+                  — {data.totalReviews} avis Google
                 </span>
               </div>
-            </StaggerItem>
+            </div>
+
+            {/* Desktop arrows */}
+            <div className="hidden items-center gap-2 md:flex">
+              <button
+                onClick={() => scroll("left")}
+                disabled={!canScrollLeft}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-earth-200 text-earth-800 transition-all hover:bg-brand-50 disabled:opacity-30 disabled:cursor-default disabled:hover:bg-transparent"
+                aria-label="Précédent"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                disabled={!canScrollRight}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-earth-200 text-earth-800 transition-all hover:bg-brand-50 disabled:opacity-30 disabled:cursor-default disabled:hover:bg-transparent"
+                aria-label="Suivant"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Horizontal carousel */}
+      <div className="mx-auto max-w-6xl px-6">
+        <div
+          ref={scrollRef}
+          className="no-scrollbar flex items-stretch gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+        >
+          {data.reviews.map((item, index) => (
+            <div
+              key={index}
+              className="w-[85vw] shrink-0 snap-start sm:w-[70vw] md:w-100 lg:w-105"
+            >
+              <div className="relative flex h-full flex-col justify-between rounded-xl bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                <div>
+                  <Stars count={item.rating} size={16} />
+                  <p className="mt-5 line-clamp-6 text-[15px] italic leading-relaxed text-earth-800">
+                    &ldquo;{item.text}&rdquo;
+                  </p>
+                </div>
+                <div className="mt-6 flex items-center justify-between border-t border-earth-100 pt-5">
+                  <div>
+                    <p className="font-semibold text-earth-900">{item.name}</p>
+                    <p className="mt-0.5 text-sm text-earth-400">
+                      {item.relativeTime
+                        ? item.relativeTime
+                        : "Avis Google"}
+                    </p>
+                  </div>
+                  {/* Google G logo */}
+                  <span className="text-lg font-bold text-earth-400/30">G</span>
+                </div>
+              </div>
+            </div>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

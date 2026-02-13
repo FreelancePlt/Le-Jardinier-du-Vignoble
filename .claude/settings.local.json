@@ -12,7 +12,8 @@
       "Bash(done)",
       "Bash(for f in \"public/photos-entretien/apres/\"*.jpg)",
       "Bash(do echo \"Processing: $f\")",
-      "Bash(for f in \"public/photos-entretien/avant/\"*.jpg)"
+      "Bash(for f in \"public/photos-entretien/avant/\"*.jpg)",
+      "Bash(npm install:*)"
     ]
   }
 }
