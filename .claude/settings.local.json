@@ -4,7 +4,12 @@
       "WebFetch(domain:permapaysage.odoo.com)",
       "Bash(npm ls:*)",
       "Bash(npm run build:*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(sips --help:*)",
+      "Bash(sips:*)",
+      "Bash(for f in \"/Users/raph/Documents/Travail/Personnel/Repositories/Le-Jardinier-du-Vignoble/public/photos-entretien/apres/\"*.jpg \"/Users/raph/Documents/Travail/Personnel/Repositories/Le-Jardinier-du-Vignoble/public/photos-entretien/avant/\"*.jpg)",
+      "Bash(do sips -g pixelWidth -g pixelHeight \"$f\")",
+      "Bash(done)"
     ]
   }
 }

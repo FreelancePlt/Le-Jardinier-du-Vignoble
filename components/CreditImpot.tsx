@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BadgePercent, FileText, Wallet } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
@@ -32,6 +33,18 @@ export default function CreditImpot() {
             automatiquement d&apos;un crédit d&apos;impôt de 50 % sur toutes nos
             prestations.
           </p>
+          <div className="mt-8 inline-flex items-center gap-3 rounded-xl bg-white/10 px-5 py-3 backdrop-blur-sm border border-white/15">
+            <Image
+              src="/logos/SAP.png"
+              alt="Agrément Service à la Personne"
+              width={48}
+              height={48}
+              className="shrink-0"
+            />
+            <span className="text-sm font-medium text-white/90">
+              Organisme agréé Service à la Personne
+            </span>
+          </div>
         </FadeIn>
 
         <StaggerContainer
