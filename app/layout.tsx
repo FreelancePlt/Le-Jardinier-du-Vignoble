@@ -4,14 +4,14 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Le Jardinier du Vignoble — Entretien de jardin à Vallet",
+  title: "Le Jardinier du Vignoble — Entretien de jardin à Vallet et Vignoble Nantais",
   description:
-    "Votre jardinier de proximité pour l'entretien de jardin à Vallet et dans le Vignoble Nantais. Tonte, taille de haies, désherbage écoresponsable. Crédit d'impôt 50%. Devis gratuit.",
+    "Votre jardinier de confiance à Vallet. Tonte, taille, désherbage — crédit d'impôt 50 %. Devis gratuit, réponse sous 24h.",
 };
 
 export default function RootLayout({

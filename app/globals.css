@@ -41,6 +41,49 @@
   animation: gentle-bounce 2s ease-in-out infinite;
 }
 
+@keyframes ken-burns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@utility animate-ken-burns {
+  animation: ken-burns 6s ease-out forwards;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Leaflet overrides for InterventionMap ── */
+.intervention-map {
+  border-radius: 0.75rem;
+}
+
+.intervention-map .leaflet-tooltip {
+  background: #3C5A3B;
+  color: #FEFDFB;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(61, 46, 34, 0.15);
+}
+
+.intervention-map .leaflet-tooltip-top::before {
+  border-top-color: #3C5A3B;
+}
+
+.intervention-map .leaflet-control-attribution {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -49,4 +92,9 @@ html {
 body {
   background-color: var(--color-cream);
   color: var(--color-earth-800);
+}
+
+
+button {
+  cursor: pointer;
 }
