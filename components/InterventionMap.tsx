@@ -54,7 +54,7 @@ export default function InterventionMap() {
       <ZoomControl position="bottomright" />
 
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
+        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
       />
 
       <Circle
