@@ -58,7 +58,7 @@ export default function Avis({ data }: { data: PlaceReviews }) {
   return (
     <section id="avis" className="bg-cream py-20 lg:py-28">
       {/* Title + rating + arrows */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 xl:max-w-7xl">
         <FadeIn>
           <div className="mb-10 flex items-center justify-between">
             <div>
@@ -103,7 +103,7 @@ export default function Avis({ data }: { data: PlaceReviews }) {
       </div>
 
       {/* Horizontal carousel */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 xl:max-w-7xl">
         <div
           ref={scrollRef}
           className="no-scrollbar flex items-stretch gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
@@ -111,7 +111,7 @@ export default function Avis({ data }: { data: PlaceReviews }) {
           {data.reviews.map((item, index) => (
             <div
               key={index}
-              className="w-[85vw] shrink-0 snap-start sm:w-[70vw] md:w-100 lg:w-105"
+              className="w-[85vw] shrink-0 snap-start sm:w-[70vw] md:w-100 lg:w-105 xl:w-[calc(33.333%-16px)]"
             >
               <div className="relative flex h-full flex-col justify-between rounded-xl bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-md">
                 <div>

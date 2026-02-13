@@ -10,6 +10,7 @@ import {
   Wind,
   Droplets,
   Grid3x3,
+  MessageSquare,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
@@ -93,7 +94,7 @@ export default function Prestations() {
 
             {/* Chips crédit d'impôt + modes de paiement */}
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-100 px-4 py-1.5 text-sm font-medium text-accent-500">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-100 px-4 py-1.5 text-sm font-medium text-brand-600">
                 <BadgePercent size={16} strokeWidth={2} />
                 Éligible au crédit d&apos;impôt de 50 %
               </span>
@@ -127,6 +128,26 @@ export default function Prestations() {
               </StaggerItem>
             );
           })}
+
+          {/* CTA card */}
+          <StaggerItem className="h-full">
+            <a
+              href="#contact"
+              className="flex h-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-brand-600/50 bg-brand-50 p-6 text-center transition-all duration-200 hover:border-brand-600 hover:bg-brand-100 hover:-translate-y-1"
+            >
+              <MessageSquare
+                size={24}
+                strokeWidth={2}
+                className="mb-3 text-brand-600"
+              />
+              <h3 className="text-lg font-semibold text-earth-900">
+                Un autre besoin ?
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-earth-600">
+                Décrivez-nous votre projet, on trouve la solution adaptée à votre jardin.
+              </p>
+            </a>
+          </StaggerItem>
         </StaggerContainer>
       </div>
     </section>

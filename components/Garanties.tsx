@@ -21,7 +21,7 @@ const garanties = [
 
 export default function Garanties() {
   return (
-    <section id="garanties" className="bg-brand-800 py-20 lg:py-28">
+    <section id="garanties" className="bg-brand-900 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
         {/* Titre */}
         <FadeIn>

@@ -93,3 +93,8 @@ body {
   background-color: var(--color-cream);
   color: var(--color-earth-800);
 }
+
+
+button {
+  cursor: pointer;
+}

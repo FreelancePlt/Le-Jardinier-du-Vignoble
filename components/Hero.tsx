@@ -6,15 +6,11 @@ import { motion, AnimatePresence } from "@/components/motion";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const heroPhotos = [
-  "/photos-entretien/apres/AP 01.jpg",
-  "/photos-entretien/apres/AP 02.jpg",
-  "/photos-entretien/apres/AP 03.jpg",
-  "/photos-entretien/apres/AP 04.jpg",
-  "/photos-entretien/apres/AP 05.jpg",
-  "/photos-entretien/apres/AP 06.jpg",
-  "/photos-entretien/apres/AP 07.jpg",
-  "/photos-entretien/apres/AP 08.jpg",
-  "/photos-entretien/apres/AP 09.jpg",
+	"/photos-entretien/apres/AP 02.jpg",
+	"/photos-entretien/apres/AP 03.jpg",
+	"/photos-entretien/apres/AP 04.jpg",
+	"/photos-entretien/apres/AP 05.jpg",
+	"/photos-entretien/apres/AP 08.jpg",
 ];
 
 const SLIDE_INTERVAL = 5000;

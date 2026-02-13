@@ -68,7 +68,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
         alt=""
         fill
         className="object-cover"
-        sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, 500px"
+        sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1280px) 50vw, 33vw"
       />
 
       {/* Before image (clipped from left) */}
@@ -81,7 +81,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
           alt=""
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, 500px"
+          sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1280px) 50vw, 33vw"
         />
       </div>
 
@@ -158,7 +158,7 @@ export default function AvantApres() {
   return (
     <section className="bg-white py-20 lg:py-28">
       {/* Title + navigation arrows */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 xl:max-w-7xl">
         <FadeIn>
           <div className="mb-10 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -196,7 +196,7 @@ export default function AvantApres() {
       </div>
 
       {/* Horizontal carousel */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 xl:max-w-7xl">
         <div
           ref={scrollRef}
           className="no-scrollbar flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory"
@@ -204,7 +204,7 @@ export default function AvantApres() {
           {pairs.map((pair, i) => (
             <div
               key={i}
-              className="w-[85vw] shrink-0 snap-start sm:w-[70vw] md:w-[calc(50%-12px)]"
+              className="w-[85vw] shrink-0 snap-start sm:w-[70vw] md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]"
             >
               <BeforeAfterSlider before={pair.before} after={pair.after} />
             </div>

@@ -56,7 +56,7 @@ export default function Footer() {
 
 							{/* Col 2 — Liens rapides */}
 							<div>
-								<h3 className="mb-4 text-sm font-semibold text-white/90">
+								<h3 className="mb-4 font-sans text-sm font-semibold text-white/90">
 									Liens rapides
 								</h3>
 								<ul className="flex flex-col gap-2">
@@ -75,7 +75,7 @@ export default function Footer() {
 
 							{/* Col 3 — Contact */}
 							<div>
-								<h3 className="mb-4 text-sm font-semibold text-white/90">Contact</h3>
+								<h3 className="mb-4 font-sans text-sm font-semibold text-white/90">Contact</h3>
 								<ul className="flex flex-col gap-3">
 									<li>
 										<a
@@ -100,7 +100,7 @@ export default function Footer() {
 
 							{/* Col 4 — Réseaux sociaux */}
 							<div>
-								<h3 className="mb-4 text-sm font-semibold text-white/90">
+								<h3 className="mb-4 font-sans text-sm font-semibold text-white/90">
 									Suivez-nous
 								</h3>
 								<div className="flex gap-4">
