@@ -13,12 +13,10 @@ import {
 import { FadeIn } from "@/components/motion";
 
 const quickLinks = [
-	{ label: "Prestations SAP", href: "#prestations" },
-	{ label: "Crédit d\u2019impôts", href: "#credit-impot" },
-	{ label: "Zone d\u2019intervention", href: "#zone" },
+	{ label: "Prestations", href: "#prestations" },
 	{ label: "Garanties", href: "#garanties" },
-	{ label: "Avis Clients", href: "#avis" },
-	{ label: "Foire Aux Questions", href: "#faq" },
+	{ label: "Avis", href: "#avis" },
+	{ label: "Zone", href: "#zone" },
 	{ label: "Contact", href: "#contact" },
 ];
 
@@ -206,7 +204,15 @@ export default function Footer() {
 				<div className="mt-12 border-t border-white/10 pt-6">
 					<div className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 sm:flex-row">
 						<p>© 2025 Le Jardinier du Vignoble — propulsé par <a href="https://www.permapaysage.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-400">Permapaysage</a></p>
-						<p>Mentions légales · CGV</p>
+						<p>
+							<a href="/mentions-legales" className="transition-colors hover:text-brand-400">
+								Mentions légales
+							</a>{" "}
+							·{" "}
+							<a href="/cgv" className="transition-colors hover:text-brand-400">
+								CGV
+							</a>
+						</p>
 					</div>
 
 					{/* SEO — villes d'intervention */}
