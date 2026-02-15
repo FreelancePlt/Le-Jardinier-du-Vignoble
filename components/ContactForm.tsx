@@ -48,9 +48,7 @@ export default function ContactForm() {
 						Accept: "application/json",
 					},
 					body: JSON.stringify({
-						access_key:
-							process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
-							"779b2d66-e36b-4b2d-8506-2167a62c71a7",
+						access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
 						subject: "Nouvelle demande de devis - Le Jardinier du Vignoble",
 						from_name: `${form.prenom} ${form.nom}`.trim(),
 						...form,
