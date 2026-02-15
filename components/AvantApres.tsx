@@ -157,7 +157,7 @@ export default function AvantApres() {
 					<div className="mb-10 flex items-center justify-between">
 						<div className="flex items-center gap-3">
 							<ArrowLeftRight size={24} strokeWidth={2} className="text-brand-600" />
-							<h2 className="text-2xl font-bold text-earth-900 lg:text-3xl">
+							<h2 className="font-fraunces text-2xl font-bold text-earth-900 lg:text-3xl">
 								Le résultat parle de lui-même
 							</h2>
 						</div>

@@ -73,7 +73,7 @@ export default function ContactForm() {
         {/* Title centered */}
         <FadeIn>
           <div className="mb-12 text-center lg:mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-earth-900 lg:text-5xl">
+            <h2 className="font-fraunces text-3xl font-bold tracking-tight text-earth-900 lg:text-5xl">
               Obtenez votre devis gratuit
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-earth-600">
@@ -221,14 +221,14 @@ export default function ContactForm() {
               {/* Phone CTA */}
               <a
                 href="tel:0752620818"
-                className="flex items-center gap-4 rounded-xl border border-accent-400/40 bg-accent-100 p-5 transition-all duration-200 hover:border-accent-400 hover:shadow-sm"
+                className="group flex items-center gap-4 rounded-xl bg-brand-800 p-5 transition-all duration-200 hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-400/15">
-                  <Phone size={22} strokeWidth={2} className="text-accent-500" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 transition-colors duration-200 group-hover:bg-white/25">
+                  <Phone size={20} strokeWidth={2} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-earth-600">Vous préférez appeler ?</p>
-                  <p className="text-lg font-bold text-earth-900">07 52 62 08 18</p>
+                  <p className="text-xs font-medium text-white/60">Vous préférez appeler ?</p>
+                  <p className="text-lg font-bold text-white">07 52 62 08 18</p>
                 </div>
               </a>
             </div>

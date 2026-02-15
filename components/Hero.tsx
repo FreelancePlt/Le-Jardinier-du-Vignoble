@@ -85,16 +85,15 @@ export default function Hero() {
 				/>
 
 				<div className="relative z-10 mx-auto max-w-6xl px-6">
-					<div className="mx-auto max-w-3xl text-center">
+					<div className="mx-auto max-w-4xl text-center">
 						<motion.h1
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, ease: "easeOut" }}
-							className="text-5xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
+							className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+							style={{ textShadow: "0 2px 20px rgba(0,0,0,0.3)" }}
 						>
-							Un jardin impeccable,
-							<br />
-							sans vous en soucier
+							Reprenez vos week-ends, nous redonnons vie à votre jardin.
 						</motion.h1>
 
 						<motion.p
@@ -103,8 +102,14 @@ export default function Hero() {
 							transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
 							className="mt-4 text-xl font-normal text-white/80 md:text-2xl"
 						>
-							Votre jardinier de confiance à Vallet et dans tout le Vignoble Nantais
+							Votre jardinier de proximité à Vallet et dans tout le Vignoble Nantais
 						</motion.p>
+
+						{/* VARIANTE PRÉCÉDENTE
+          <motion.p className="mt-4 text-xl font-normal text-white/80 md:text-2xl">
+            Votre jardinier de confiance à Vallet et dans tout le Vignoble Nantais
+          </motion.p>
+          */}
 
 						<motion.p
 							initial={{ opacity: 0, y: 20 }}
@@ -112,9 +117,16 @@ export default function Hero() {
 							transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
 							className="mt-4 text-base leading-relaxed text-white/60"
 						>
-							Profitez de votre extérieur sans les contraintes. Tonte, taille,
-							désherbage — on s&apos;occupe de tout, toute l&apos;année.
+							Ne payez que la moitié de vos factures d&apos;entretien. Tonte, taille et
+							désherbage : nous gérons tout pour vous, sans aucune avance de
+							trésorerie.
 						</motion.p>
+
+						{/* VARIANTE PRÉCÉDENTE
+          <motion.p className="mt-4 text-base leading-relaxed text-white/60">
+            Profitez de votre extérieur sans les contraintes. Tonte, taille, désherbage — on s'occupe de tout, toute l'année.
+          </motion.p>
+          */}
 
 						<motion.div
 							initial={{ opacity: 0, scale: 0.95 }}
@@ -123,7 +135,7 @@ export default function Hero() {
 							className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm"
 						>
 							<ShieldCheck size={18} strokeWidth={2} className="text-brand-400" />
-							<span>Crédit d&apos;impôt 50 % — Devis gratuit, réponse sous 24h</span>
+							<span>Avance immédiate URSSAF — Devis gratuit sous 24h</span>
 						</motion.div>
 
 						<motion.div
@@ -136,7 +148,7 @@ export default function Hero() {
 								href="#contact"
 								className="inline-block rounded-full bg-white px-8 py-3 text-base font-semibold text-brand-800 shadow-lg transition-all duration-200 ease-out hover:bg-cream hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-md"
 							>
-								Obtenir un devis gratuit
+								Diviser ma facture par 2
 							</a>
 
 							<a
