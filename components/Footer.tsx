@@ -13,11 +13,13 @@ import {
 import { FadeIn } from "@/components/motion";
 
 const quickLinks = [
-	{ label: "Prestations", href: "#prestations" },
-	{ label: "Garanties", href: "#garanties" },
-	{ label: "Avis", href: "#avis" },
-	{ label: "Zone", href: "#zone" },
-	{ label: "Contact", href: "#contact" },
+	{ label: "Prestations SAP", href: "/#prestations" },
+	{ label: "Crédit d'impôts", href: "/#credit-impot" },
+	{ label: "Zone d'intervention", href: "/#zone" },
+	{ label: "Garanties", href: "/#garanties" },
+	{ label: "Avis Clients", href: "/#avis" },
+	{ label: "Foire Aux Questions", href: "/#faq" },
+	{ label: "Contact", href: "/#contact" },
 ];
 
 const avantagesFiscaux = [
@@ -62,7 +64,14 @@ export default function Footer() {
 									Le Jardinier du Vignoble
 								</span>
 							</div>
-							<a href="https://www.permapaysage.com" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-white/50 transition-colors hover:text-brand-400">propulsé par Permapaysage</a>
+							<a
+								href="https://www.permapaysage.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="mt-2 inline-block text-sm text-white/50 transition-colors hover:text-brand-400"
+							>
+								propulsé par Permapaysage
+							</a>
 							<p className="mt-4 text-sm leading-relaxed text-white/70">
 								Jardinier paysagiste basé à Vallet (44330). Interventions rapides dans
 								tout le Vignoble Nantais et le Sud-Loire.
@@ -141,11 +150,11 @@ export default function Footer() {
 								</li>
 								<li>
 									<a
-										href="mailto:contact@le-jardinier-du-vignoble.fr"
+										href="mailto:permapaysage.jl@gmail.com"
 										className="flex items-center gap-2 text-sm text-white/70 transition-all duration-200 ease-out hover:text-brand-400"
 									>
 										<Mail size={16} strokeWidth={2} />
-										contact@le-jardinier-du-vignoble.fr
+										permapaysage.jl@gmail.com
 									</a>
 								</li>
 								<li className="flex items-center gap-2 text-sm text-white/70">
@@ -183,7 +192,20 @@ export default function Footer() {
 										aria-label="LinkedIn"
 										className="text-white/70 transition-all duration-200 ease-out hover:text-brand-400"
 									>
-										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										>
+											<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+											<rect width="4" height="12" x="2" y="9" />
+											<circle cx="4" cy="4" r="2" />
+										</svg>
 									</a>
 								</div>
 							</div>
@@ -203,9 +225,22 @@ export default function Footer() {
 				{/* Bas de footer */}
 				<div className="mt-12 border-t border-white/10 pt-6">
 					<div className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 sm:flex-row">
-						<p>© 2025 Le Jardinier du Vignoble — propulsé par <a href="https://www.permapaysage.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-400">Permapaysage</a></p>
 						<p>
-							<a href="/mentions-legales" className="transition-colors hover:text-brand-400">
+							© 2025 Le Jardinier du Vignoble — propulsé par{" "}
+							<a
+								href="https://www.permapaysage.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="transition-colors hover:text-brand-400"
+							>
+								Permapaysage
+							</a>
+						</p>
+						<p>
+							<a
+								href="/mentions-legales"
+								className="transition-colors hover:text-brand-400"
+							>
 								Mentions légales
 							</a>{" "}
 							·{" "}

@@ -4,7 +4,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export default function CreditImpot() {
 	return (
-		<section className="bg-brand-800 py-20 lg:py-28">
+		<section id="credit-impot" className="bg-brand-800 py-20 lg:py-28">
 			<div className="mx-auto max-w-6xl px-6 text-center">
 				<FadeIn>
 					<BadgePercent
