@@ -105,7 +105,6 @@ export default function ContactForm() {
 		return (
 			<section id="contact" className="bg-white py-24 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					{/* Title centered */}
 					<FadeIn>
 						<div className="mb-12 text-center lg:mb-16">
 							<h2 className="font-fraunces text-3xl font-bold tracking-tight text-earth-900 lg:text-5xl">
@@ -118,11 +117,9 @@ export default function ContactForm() {
 					</FadeIn>
 
 					<div className="grid items-start gap-10 lg:grid-cols-5 lg:gap-12">
-						{/* Left — form card */}
 						<FadeIn delay={0.1} className="lg:col-span-3">
 							<div className="rounded-2xl border border-earth-200/50 bg-white p-7 shadow-sm lg:p-9">
 								<form onSubmit={handleSubmit} className="flex flex-col gap-4">
-									{/* Prénom / Nom */}
 									<div className="grid gap-4 sm:grid-cols-2">
 										<div>
 											<label
@@ -164,7 +161,6 @@ export default function ContactForm() {
 										</div>
 									</div>
 
-									{/* Email + Téléphone */}
 									<div className="grid gap-4 sm:grid-cols-2">
 										<div>
 											<label
