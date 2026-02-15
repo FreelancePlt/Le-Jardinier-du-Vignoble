@@ -226,7 +226,7 @@ export default function Footer() {
 				<div className="mt-12 border-t border-white/10 pt-6">
 					<div className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 sm:flex-row">
 						<p>
-							© 2025 Le Jardinier du Vignoble — propulsé par{" "}
+							© {new Date().getFullYear()} Le Jardinier du Vignoble — propulsé par{" "}
 							<a
 								href="https://www.permapaysage.com"
 								target="_blank"
